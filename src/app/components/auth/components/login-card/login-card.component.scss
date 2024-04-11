@@ -1,0 +1,24 @@
+@import './.././../../../mixins';
+
+.login-card, .login-card-header, .login-card-body, .login-card-body-form, form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card {
+    @include width-height(100%, 100%);
+    .login-card-header {
+        @include basic-flex(center, center);
+        @include width-height(inherit, 20%);
+        background-color: black;
+        color: white;
+    }
+
+    .login-card-body {
+        @include width-height(inherit, 80%);
+        .login-card-body-form {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

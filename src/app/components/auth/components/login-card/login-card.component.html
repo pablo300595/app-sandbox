@@ -1,0 +1,23 @@
+<div class="login-card">
+    <div class="login-card-header">
+        <h1>Login Form</h1>
+    </div>
+
+    <div class="login-card-body">
+        <div class="login-card-body-form">
+            <form class="clean-form" #loginCardForm (ngSubmit)="login()" [formGroup]="loginForm">
+                <div class="clean-row">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" formControlName="email">
+                </div>
+                <p class="clean-error" *ngIf="loginForm.get('email')?.hasError('email')  && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ">Wrong email</p>
+                <div class="clean-row">
+                    <label for="">Password</label>
+                    <input type="password" name="password" formControlName="password">
+                </div>
+                <button class="clean-btn" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+</div>

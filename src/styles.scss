@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/mixins';
+
+.clean-error {
+    color: red;
+}
+
+.clean-form {
+    background-color: rgb(220, 220, 238);
+    @include width-height(inherit, 100%);
+    @include basic-flex(center, center);
+}
+
+.clean-row {
+    @include width-height(90%, 10%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    label {
+        width: 20%;
+    }
+
+    input {
+        width: 80%;
+    }
+    // background-color: #454b68;
+}
+
+.clean-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    outline: none;
+    padding: 1em;
+    transition: ease .2s;
+    width: 100px;
+    height: 30px;
+}
+
+.clean-btn:hover {
+    background: transparent;
+    border: #3F5EFB 1px solid;
+    color: #3F5EFB;
+}
+
+html {
+    display: flex;
+    @include width-height(100vw, 100vh);
+}
+
+body {
+    @include width-height(inherit, inherit);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+app-root {
+    @include width-height(inherit, inherit);
+    @include basic-flex(center, center);
+
+    app-login-page {
+        @include width-height(inherit, inherit);
+        @include basic-flex(center, center);
+        background-color: #3F5EFB;
+
+        app-login-card {
+            @include width-height(50%, 50%);
+            @include basic-flex(center, center);
+            background-color: #454b68;
+        }
+    }
+}
