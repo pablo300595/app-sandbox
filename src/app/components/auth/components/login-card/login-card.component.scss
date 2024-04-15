@@ -7,6 +7,7 @@
 
 .login-card {
     @include width-height(100%, 100%);
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     .login-card-header {
         @include basic-flex(center, center);
         @include width-height(inherit, 20%);

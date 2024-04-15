@@ -1,0 +1,23 @@
+<p>dropdown works!</p>
+
+<!-- <div class="dropdown"> 
+    <div class="selected-option" (click)="toggleDropdown()">
+        {{ selectedOption || 'Select an option' }}
+        <span class="arrow" [class.open]="isOpen"></span>
+      </div>
+      <ul class="dropdown-menu" *ngIf="isOpen">
+        @for (option of options; track option.name) {
+            <li (click)="selectOption(option)">{{option.starship_class | uppercase}}</li>
+        }
+      </ul>
+
+      <p>{{selectedOption | json}}</p>
+</div> -->
+
+<select (change)="onOptionSelected($event)">
+    <option value="" disabled selected>Select an option</option>
+    @for (option of options; track option.name) {
+        <option [value]="option">{{ option.starship_class | uppercase }}</option>
+    }
+    <!-- <option *ngFor="let option of options" [value]="option">{{ option }}</option> -->
+</select>

@@ -10,11 +10,19 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" formControlName="email">
                 </div>
-                <p class="clean-error" *ngIf="loginForm.get('email')?.hasError('email')  && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ">Wrong email</p>
+                <!-- <p class="clean-error" *ngIf="loginForm.get('email')?.hasError('email')  && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ">Wrong email</p> -->
+                @if (loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)) {
+                    <p class="clean-error"> *required field</p>
+                } @else if (loginForm.get('email')?.hasError('email') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)) {
+                    <p class="clean-error"> *wrong email</p>
+                } 
                 <div class="clean-row">
                     <label for="">Password</label>
                     <input type="password" name="password" formControlName="password">
                 </div>
+                @if (loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)) {
+                    <p class="clean-error"> *required field</p>
+                }
                 <button class="clean-btn" type="submit">Login</button>
             </form>
         </div>

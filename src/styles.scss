@@ -69,12 +69,14 @@ app-root {
     app-login-page {
         @include width-height(inherit, inherit);
         @include basic-flex(center, center);
-        background-color: #3F5EFB;
+        background-color: #eceefad8;
 
         app-login-card {
             @include width-height(50%, 50%);
             @include basic-flex(center, center);
-            background-color: #454b68;
+            border-radius: 20px;
+            // background-color: #1f3bc3;
         }
     }
 }
+

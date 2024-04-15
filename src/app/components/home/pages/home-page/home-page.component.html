@@ -1,1 +1,17 @@
 <p>home-page works!</p>
+<!-- <ul>
+    @defer (when starshipNameList()) {
+        @for(starship of starshipNameList(); track starship) {
+            <li>{{starship.starship_class | uppercase}}</li>
+        }
+    } @placeholder {
+        <p>Empty</p>
+      }
+</ul> -->
+
+@defer (when starshipNameList()) { 
+    <app-dropdown [options]="starshipNameList()" />
+} @placeholder {
+    <p>Empty</p>
+}
+
